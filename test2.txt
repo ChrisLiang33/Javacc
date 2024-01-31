@@ -1,0 +1,20 @@
+class HelloWorld {
+    public static void main(String[] args) {
+        int x = 1;
+        int y = 10;
+        int z = 2;
+        int sum = addNumbers(x, y, z);
+        System.out.println("The sum of " + x + " and " + z + " " + y + "s' is " + sum);
+    }
+
+    public static int addNumbers(int a, int b, int c) {
+        int result = a;
+        int i = 0;
+        while (i < c) {
+            result += b;
+            i++;
+        }
+        return result;
+    }
+}
+
