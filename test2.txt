@@ -1,20 +1,17 @@
-class HelloWorld {
-    public static void main(String[] args) {
-        int x = 1;
-        int y = 10;
-        int z = 2;
-        int sum = addNumbers(x, y, z);
-        System.out.println("The sum of " + x + " and " + z + " " + y + "s' is " + sum);
-    }
-
-    public static int addNumbers(int a, int b, int c) {
-        int result = a;
-        int i = 0;
-        while (i < c) {
-            result += b;
-            i++;
-        }
-        return result;
+class Factorial{
+    public static void main(String[] a){
+        System.out.println(new Fac().ComputeFac(10)); 
+        
     }
 }
 
+class Fac {
+    public int ComputeFac(int num){
+        int num_aux ;
+        if (num < 1)
+            num_aux = 1 ;
+        else
+            num_aux = num * (this.ComputeFac(num-1)) ;
+        return num_aux ;
+    }
+}

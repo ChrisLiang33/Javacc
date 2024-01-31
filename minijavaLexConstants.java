@@ -9,77 +9,83 @@ public interface minijavaLexConstants {
   /** End of File. */
   int EOF = 0;
   /** RegularExpression Id. */
-  int LPAREN = 5;
+  int CLASS = 5;
   /** RegularExpression Id. */
-  int RPAREN = 6;
+  int PUBLIC = 6;
   /** RegularExpression Id. */
-  int PLUS = 7;
+  int STATIC = 7;
   /** RegularExpression Id. */
-  int MINUS = 8;
+  int VOID = 8;
   /** RegularExpression Id. */
-  int MULTIPLY = 9;
+  int MAIN = 9;
   /** RegularExpression Id. */
-  int DIVIDE = 10;
+  int STRING = 10;
   /** RegularExpression Id. */
-  int INTEGER_LITERAL = 11;
+  int EXTENDS = 11;
   /** RegularExpression Id. */
-  int CLASS = 12;
+  int RETURN = 12;
   /** RegularExpression Id. */
-  int IF = 13;
+  int COMMA = 13;
   /** RegularExpression Id. */
-  int ELSE = 14;
+  int INT_ARRAY = 14;
   /** RegularExpression Id. */
-  int PUBLIC = 15;
+  int LBRACKET = 15;
   /** RegularExpression Id. */
-  int STATIC = 16;
+  int RBRACKET = 16;
   /** RegularExpression Id. */
-  int VOID = 17;
+  int BOOLEAN = 17;
   /** RegularExpression Id. */
-  int MAIN = 18;
+  int INT = 18;
   /** RegularExpression Id. */
-  int THIS = 19;
+  int LCBRACKET = 19;
   /** RegularExpression Id. */
-  int PERIOD = 20;
+  int RCBRACKET = 20;
   /** RegularExpression Id. */
-  int WHILE = 21;
+  int IF = 21;
   /** RegularExpression Id. */
-  int EXTENDS = 22;
+  int ELSE = 22;
   /** RegularExpression Id. */
-  int BOOLEAN = 23;
+  int WHILE = 23;
   /** RegularExpression Id. */
-  int TRUE = 24;
+  int PRINT = 24;
   /** RegularExpression Id. */
-  int FALSE = 25;
+  int SEMICOLON = 25;
   /** RegularExpression Id. */
-  int INT = 26;
+  int EQUALS = 26;
   /** RegularExpression Id. */
   int LENGTH = 27;
   /** RegularExpression Id. */
-  int INT_ARRAY = 28;
+  int PERIOD = 28;
   /** RegularExpression Id. */
-  int NEW = 29;
+  int TRUE = 29;
   /** RegularExpression Id. */
-  int NOT = 30;
+  int FALSE = 30;
   /** RegularExpression Id. */
-  int EQUALS = 31;
+  int THIS = 31;
   /** RegularExpression Id. */
-  int COMMA = 32;
+  int NEW_INT = 32;
   /** RegularExpression Id. */
-  int IDENTIFIER = 33;
+  int NEW = 33;
   /** RegularExpression Id. */
-  int LBRACKET = 34;
+  int NOT = 34;
   /** RegularExpression Id. */
-  int RBRACKET = 35;
+  int IDENTIFIER = 35;
   /** RegularExpression Id. */
-  int LCBRACKET = 36;
+  int INTEGER_LITERAL = 36;
   /** RegularExpression Id. */
-  int RCBRACKET = 37;
+  int AND = 37;
   /** RegularExpression Id. */
-  int SEMICOLON = 38;
+  int MORE_THAN = 38;
   /** RegularExpression Id. */
-  int LESS_THAN = 39;
+  int PLUS = 39;
   /** RegularExpression Id. */
-  int MORE_THAN = 40;
+  int MINUS = 40;
+  /** RegularExpression Id. */
+  int MULTIPLY = 41;
+  /** RegularExpression Id. */
+  int LPAREN = 42;
+  /** RegularExpression Id. */
+  int RPAREN = 43;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -91,42 +97,45 @@ public interface minijavaLexConstants {
     "\"\\n\"",
     "\"\\r\"",
     "\" \"",
-    "\"(\"",
-    "\")\"",
-    "\"+\"",
-    "\"-\"",
-    "\"*\"",
-    "\"/\"",
-    "<INTEGER_LITERAL>",
     "\"class\"",
-    "\"if\"",
-    "\"else\"",
     "\"public\"",
     "\"static\"",
     "\"void\"",
     "\"main\"",
-    "\"this\"",
-    "\".\"",
-    "\"while\"",
+    "\"String\"",
     "\"extends\"",
-    "\"boolean\"",
-    "\"true\"",
-    "\"false\"",
-    "\"int\"",
-    "\"length\"",
-    "\"int []\"",
-    "\"new\"",
-    "\"!\"",
-    "\"=\"",
+    "\"return\"",
     "\",\"",
-    "<IDENTIFIER>",
+    "\"int []\"",
     "\"[\"",
     "\"]\"",
+    "\"boolean\"",
+    "\"int\"",
     "\"{\"",
     "\"}\"",
+    "\"if\"",
+    "\"else\"",
+    "\"while\"",
+    "\"System.out.println\"",
     "\";\"",
-    "\">\"",
+    "\"=\"",
+    "\"length\"",
+    "\".\"",
+    "\"true\"",
+    "\"false\"",
+    "\"this\"",
+    "\"new int\"",
+    "\"new\"",
+    "\"!\"",
+    "<IDENTIFIER>",
+    "<INTEGER_LITERAL>",
+    "\"&&\"",
     "\"<\"",
+    "\"+\"",
+    "\"-\"",
+    "\"*\"",
+    "\"(\"",
+    "\")\"",
   };
 
 }
