@@ -125,40 +125,45 @@ SKIP: /* Whitespace */
 
 TOKEN:
 {
-   <LPAREN:    "(" >
-|  <RPAREN:    ")" >
-|  <PLUS:    "+"> 
-| <MINUS: "-" >
-|  <MULTIPLY:   "*">
-| <DIVIDE:  "/" >
-|  < INTEGER_LITERAL: (["0"-"9"])+ >
-|  <CLASS:"class">
-|  <IF: "if">
-| <ELSE: "else">
-|<PUBLIC: "public">
+| <CLASS: "class" >
+| <PUBLIC: "public">
 | <STATIC: "static">
 | <VOID: "void">
 | <MAIN: "main">
-| <THIS: "this">
-| <PERIOD: ".">
-| <WHILE: "while">
+| <STRING: "String">
 | <EXTENDS: "extends">
-| <BOOLEAN: "boolean">
-| <TRUE: "true">
-| <FALSE: "false">
-| <INT: "int">
-| <LENGTH: "length">
-| <INT_ARRAY: "int []">
-| <NEW: "new">
-| <NOT: "!">
-| <EQUALS: "=">
+| <RETURN: "return" >
 | <COMMA: ",">
-| < IDENTIFIER: (["a"-"z", "A"-"Z"])+ (["a"-"z", "A"-"Z", "0"-"9", "_"])* >
+| <INT_ARRAY: "int []">
 | <LBRACKET: "[">
 | <RBRACKET: "]">
+| <BOOLEAN: "boolean">
+| <INT: "int">
 | <LCBRACKET: "{">
 | <RCBRACKET: "}">
+| <IF: "if">
+| <ELSE: "else">
+| <WHILE: "while">
+| <PRINT: "System.out.println" >
 | <SEMICOLON: ";">
-| <LESS_THAN: ">">
+| <EQUALS: "=">
+| <LENGTH: "length">
+| <PERIOD: ".">
+| <TRUE: "true">
+| <FALSE: "false">
+| <THIS: "this">
+| <NEW_INT: "new int" >
+| <NEW: "new">
+| <NOT: "!">
+| <IDENTIFIER: (["a"-"z", "A"-"Z"])+ (["a"-"z", "A"-"Z", "0"-"9", "_"])* >
+| <INTEGER_LITERAL: (["0"-"9"])+ >
+| <AND: "&&" >
 | <MORE_THAN: "<">
+| <PLUS: "+"> 
+| <MINUS: "-" >
+| <MULTIPLY: "*">
+| <LPAREN: "(" >
+| <RPAREN: ")" >
 }
+
+
