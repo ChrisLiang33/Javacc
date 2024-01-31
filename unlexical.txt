@@ -1,0 +1,7 @@
+class UnflexibleToken {
+    public static void main(String[] args) {
+        int token1 = 10; 
+        System.out.println(token1);
+        String token2 = @!@#$%;
+    }
+}
