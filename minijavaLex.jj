@@ -1,0 +1,164 @@
+/*
+ * This is minijavaLex file.
+ */
+
+options {
+  IGNORE_CASE = false;
+}
+
+PARSER_BEGIN(minijavaLex)
+
+import java.io.*;
+
+public class minijavaLex {
+
+  public static void main(String[] args) throws FileNotFoundException
+  {
+    if ( args.length < 1 ) {
+       System.out.println("Please pass in the filename for a parameter.");
+       System.exit(1);
+    }
+
+    SimpleCharStream stream = new SimpleCharStream(
+                                  new FileInputStream(args[0]),0,0);
+    Token temp_token = null;
+
+    minijavaLexTokenManager TkMgr = new minijavaLexTokenManager(stream);
+
+    do {
+        temp_token = TkMgr.getNextToken();
+
+        switch(temp_token.kind) {
+
+         case LPAREN:    System.out.println("LPAREN:    " + temp_token.image);
+           break;
+         case RPAREN:    System.out.println("RPAREN:    " + temp_token.image);
+           break;
+         case PLUS:    System.out.println("PLUS:    " + temp_token.image);
+           break;
+         case MINUS:   System.out.println("MINUS:   " + temp_token.image);
+           break;
+         case INTEGER_LITERAL:    System.out.println("INTEGER_LITERAL:    " + temp_token.image);
+           break;
+         case MULTIPLY:    System.out.println("MULTIPLY:    " + temp_token.image);
+           break;
+         case DIVIDE:    System.out.println("DIVIDE:    " + temp_token.image);
+           break;
+         case CLASS:    System.out.println("CLASS:    " + temp_token.image);
+           break;
+         case IF:   System.out.println("IF:   " + temp_token.image);
+           break;
+         case ELSE:    System.out.println("ELSE:    " + temp_token.image);
+           break;
+        case PUBLIC:    System.out.println("PUBLIC:    " + temp_token.image);
+           break;
+         case STATIC:    System.out.println("STATIC:    " + temp_token.image);
+           break;
+         case VOID:    System.out.println("VOID:    " + temp_token.image);
+           break;
+         case MAIN:   System.out.println("MAIN:   " + temp_token.image);
+           break;
+         case THIS:    System.out.println("THIS:    " + temp_token.image);
+           break;
+        case PERIOD:    System.out.println("PERIOD:    " + temp_token.image);
+           break;
+         case WHILE:    System.out.println("WHILE:    " + temp_token.image);
+           break;
+         case EXTENDS:    System.out.println("EXTENDS:    " + temp_token.image);
+           break;
+         case BOOLEAN:   System.out.println("BOOLEAN:   " + temp_token.image);
+           break;
+         case TRUE:    System.out.println("TRUE:    " + temp_token.image);
+           break;
+          case FALSE:    System.out.println("FALSE:    " + temp_token.image);
+           break;
+         case INT:   System.out.println("INT:   " + temp_token.image);
+           break;
+         case LENGTH:    System.out.println("LENGTH:    " + temp_token.image);
+           break;
+          case INT_ARRAY:    System.out.println("INT_ARRAY:    " + temp_token.image);
+           break;
+         case NEW:   System.out.println("NEW:   " + temp_token.image);
+           break;
+         case NOT:    System.out.println("NOT:    " + temp_token.image);
+           break;
+          case EQUALS:    System.out.println("EQUALS:    " + temp_token.image);
+           break;
+         case COMMA:   System.out.println("COMMA:   " + temp_token.image);
+           break;
+         case IDENTIFIER:    System.out.println("IDENTIFIER:    " + temp_token.image);
+           break;
+          case LBRACKET:   System.out.println("LBRACKET:   " + temp_token.image);
+           break;
+         case RBRACKET:    System.out.println("RBRACKET:    " + temp_token.image);
+           break;
+          case LCBRACKET:   System.out.println("LCBRACKET:   " + temp_token.image);
+           break;
+         case RCBRACKET:    System.out.println("RCBRACKET:    " + temp_token.image);
+           break;
+          case SEMICOLON:    System.out.println("SEMICOLON:    " + temp_token.image);
+           break;
+           case LESS_THAN:    System.out.println("LESS_THAN:    " + temp_token.image);
+           break;
+          case MORE_THAN:    System.out.println("MORE_THAN:    " + temp_token.image);
+           break;
+         default:
+           if ( temp_token.kind != EOF )
+             System.out.println("OTHER: " + temp_token.image);
+           break;
+        }
+    } while (temp_token.kind != EOF);
+  }
+}
+
+PARSER_END(minijavaLex)
+
+SKIP: /* Whitespace */
+{
+  "\t"
+| "\n"
+| "\r"
+| " "
+}
+
+
+
+TOKEN:
+{
+   <LPAREN:    "(" >
+|  <RPAREN:    ")" >
+|  <PLUS:    "+"> 
+| <MINUS: "-" >
+|  <MULTIPLY:   "*">
+| <DIVIDE:  "/" >
+|  < INTEGER_LITERAL: (["0"-"9"])+ >
+|  <CLASS:"class">
+|  <IF: "if">
+| <ELSE: "else">
+|<PUBLIC: "public">
+| <STATIC: "static">
+| <VOID: "void">
+| <MAIN: "main">
+| <THIS: "this">
+| <PERIOD: ".">
+| <WHILE: "while">
+| <EXTENDS: "extends">
+| <BOOLEAN: "boolean">
+| <TRUE: "true">
+| <FALSE: "false">
+| <INT: "int">
+| <LENGTH: "length">
+| <INT_ARRAY: "int []">
+| <NEW: "new">
+| <NOT: "!">
+| <EQUALS: "=">
+| <COMMA: ",">
+| < IDENTIFIER: (["a"-"z", "A"-"Z"])+ (["a"-"z", "A"-"Z", "0"-"9", "_"])* >
+| <LBRACKET: "[">
+| <RBRACKET: "]">
+| <LCBRACKET: "{">
+| <RCBRACKET: "}">
+| <SEMICOLON: ";">
+| <LESS_THAN: ">">
+| <MORE_THAN: "<">
+}
