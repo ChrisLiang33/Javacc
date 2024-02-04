@@ -127,7 +127,8 @@ SKIP: /* Whitespace */
 | "\r"
 | " "
 | "//"
-|<SINGLE_LINE_COMMENT>
+| <SINGLE_LINE_COMMENT>
+| <MULTI_LINE_COMMENT>
 }
 
 
@@ -174,4 +175,5 @@ TOKEN:
 | <AND: "&&">
 //| <OR: "||">
 | <SINGLE_LINE_COMMENT: "//" (~["\n","\r"])* >
+| <MULTI_LINE_COMMENT: "/*" (~["*"] | "*" ~["/", "*"])* "*" "/" >
 }

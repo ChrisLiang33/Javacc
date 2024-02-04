@@ -82,6 +82,8 @@ public interface minijavaLexConstants {
   int AND = 41;
   /** RegularExpression Id. */
   int SINGLE_LINE_COMMENT = 42;
+  /** RegularExpression Id. */
+  int MULTI_LINE_COMMENT = 43;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -131,6 +133,7 @@ public interface minijavaLexConstants {
     "\"<\"",
     "\"&&\"",
     "<SINGLE_LINE_COMMENT>",
+    "<MULTI_LINE_COMMENT>",
   };
 
 }

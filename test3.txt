@@ -4,6 +4,8 @@ class Factorial{
     }
 }
 //ignore this
+/* ignore this too 
+ hi */
 class Fac {
     public int ComputeFac(int num){
         int num_aux ;
