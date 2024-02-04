@@ -157,15 +157,15 @@ public class minijavaLex {
 
 PARSER_END(minijavaLex)
 
-SKIP: /* Whitespace */
+SKIP :
 {
-  "\t"
-| "\n"
-| "\r"
-| " "
+    " "
+|   "\t"
+|   "\r"
+|   "\n"
+|   "//" (~["\n", "\r"])* "\n"
+|   "/*" (~["*"])* "*/"
 }
-
-
 
 TOKEN:
 {
@@ -214,3 +214,4 @@ TOKEN:
 {
   <SINGLE_LINE_COMMENT: "//" (~["\n","\r"])* ("\n"|"\r"|"\r\n")>
 } */
+
