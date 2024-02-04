@@ -9,17 +9,15 @@ public interface minijavaLexConstants {
   /** End of File. */
   int EOF = 0;
   /** RegularExpression Id. */
-  int LPAREN = 5;
+  int LPAREN = 6;
   /** RegularExpression Id. */
-  int RPAREN = 6;
+  int RPAREN = 7;
   /** RegularExpression Id. */
-  int PLUS = 7;
+  int PLUS = 8;
   /** RegularExpression Id. */
-  int MINUS = 8;
+  int MINUS = 9;
   /** RegularExpression Id. */
-  int MULTIPLY = 9;
-  /** RegularExpression Id. */
-  int DIVIDE = 10;
+  int MULTIPLY = 10;
   /** RegularExpression Id. */
   int INTEGER_LITERAL = 11;
   /** RegularExpression Id. */
@@ -39,7 +37,7 @@ public interface minijavaLexConstants {
   /** RegularExpression Id. */
   int THIS = 19;
   /** RegularExpression Id. */
-  int PERIOD = 20;
+  int DOT = 20;
   /** RegularExpression Id. */
   int WHILE = 21;
   /** RegularExpression Id. */
@@ -65,21 +63,25 @@ public interface minijavaLexConstants {
   /** RegularExpression Id. */
   int COMMA = 32;
   /** RegularExpression Id. */
-  int IDENTIFIER = 33;
+  int RETURN = 33;
   /** RegularExpression Id. */
-  int LBRACKET = 34;
+  int IDENTIFIER = 34;
   /** RegularExpression Id. */
-  int RBRACKET = 35;
+  int LBRACKET = 35;
   /** RegularExpression Id. */
-  int LCBRACKET = 36;
+  int RBRACKET = 36;
   /** RegularExpression Id. */
-  int RCBRACKET = 37;
+  int LCBRACKET = 37;
   /** RegularExpression Id. */
-  int SEMICOLON = 38;
+  int RCBRACKET = 38;
   /** RegularExpression Id. */
-  int LESS_THAN = 39;
+  int SEMICOLON = 39;
   /** RegularExpression Id. */
-  int MORE_THAN = 40;
+  int LESS_THAN = 40;
+  /** RegularExpression Id. */
+  int AND = 41;
+  /** RegularExpression Id. */
+  int SINGLE_LINE_COMMENT = 42;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -91,12 +93,12 @@ public interface minijavaLexConstants {
     "\"\\n\"",
     "\"\\r\"",
     "\" \"",
+    "\"//\"",
     "\"(\"",
     "\")\"",
     "\"+\"",
     "\"-\"",
     "\"*\"",
-    "\"/\"",
     "<INTEGER_LITERAL>",
     "\"class\"",
     "\"if\"",
@@ -119,14 +121,16 @@ public interface minijavaLexConstants {
     "\"!\"",
     "\"=\"",
     "\",\"",
+    "\"return\"",
     "<IDENTIFIER>",
     "\"[\"",
     "\"]\"",
     "\"{\"",
     "\"}\"",
     "\";\"",
-    "\">\"",
     "\"<\"",
+    "\"&&\"",
+    "<SINGLE_LINE_COMMENT>",
   };
 
 }

@@ -33,8 +33,8 @@ public class minijavaLex implements minijavaLexConstants {
            break;
          case MULTIPLY:    System.out.println("MULTIPLY:    " + temp_token.image);
            break;
-         case DIVIDE:    System.out.println("DIVIDE:    " + temp_token.image);
-           break;
+       //  case DIVIDE:    System.out.println("DIVIDE:    " + temp_token.image);
+        //   break;
          case CLASS:    System.out.println("CLASS:    " + temp_token.image);
            break;
          case IF:   System.out.println("IF:   " + temp_token.image);
@@ -51,7 +51,7 @@ public class minijavaLex implements minijavaLexConstants {
            break;
          case THIS:    System.out.println("THIS:    " + temp_token.image);
            break;
-        case PERIOD:    System.out.println("PERIOD:    " + temp_token.image);
+        case DOT:    System.out.println("PERIOD:    " + temp_token.image);
            break;
          case WHILE:    System.out.println("WHILE:    " + temp_token.image);
            break;
@@ -91,8 +91,15 @@ public class minijavaLex implements minijavaLexConstants {
            break;
            case LESS_THAN:    System.out.println("LESS_THAN:    " + temp_token.image);
            break;
-          case MORE_THAN:    System.out.println("MORE_THAN:    " + temp_token.image);
+         // case MORE_THAN:    System.out.println("MORE_THAN:    " + temp_token.image);
+         //  break;
+          case RETURN:    System.out.println("RETURN:    " + temp_token.image);
            break;
+           case AND:    System.out.println("AND:    " + temp_token.image);
+           break;
+        //  case OR:    System.out.println("OR:    " + temp_token.image);
+        //   break;
+
          default:
            if ( temp_token.kind != EOF )
              System.out.println("OTHER: " + temp_token.image);
@@ -260,7 +267,7 @@ public class minijavaLex implements minijavaLexConstants {
   /** Generate ParseException. */
   static public ParseException generateParseException() {
     jj_expentries.clear();
-    boolean[] la1tokens = new boolean[41];
+    boolean[] la1tokens = new boolean[43];
     if (jj_kind >= 0) {
       la1tokens[jj_kind] = true;
       jj_kind = -1;
@@ -277,7 +284,7 @@ public class minijavaLex implements minijavaLexConstants {
         }
       }
     }
-    for (int i = 0; i < 41; i++) {
+    for (int i = 0; i < 43; i++) {
       if (la1tokens[i]) {
         jj_expentry = new int[1];
         jj_expentry[0] = i;

@@ -42,8 +42,8 @@ public class minijavaLex {
            break;
          case MULTIPLY:    System.out.println("MULTIPLY:    " + temp_token.image);
            break;
-         case DIVIDE:    System.out.println("DIVIDE:    " + temp_token.image);
-           break;
+       //  case DIVIDE:    System.out.println("DIVIDE:    " + temp_token.image);
+        //   break;
          case CLASS:    System.out.println("CLASS:    " + temp_token.image);
            break;
          case IF:   System.out.println("IF:   " + temp_token.image);
@@ -60,7 +60,7 @@ public class minijavaLex {
            break;
          case THIS:    System.out.println("THIS:    " + temp_token.image);
            break;
-        case PERIOD:    System.out.println("PERIOD:    " + temp_token.image);
+        case DOT:    System.out.println("PERIOD:    " + temp_token.image);
            break;
          case WHILE:    System.out.println("WHILE:    " + temp_token.image);
            break;
@@ -100,8 +100,15 @@ public class minijavaLex {
            break;
            case LESS_THAN:    System.out.println("LESS_THAN:    " + temp_token.image);
            break;
-          case MORE_THAN:    System.out.println("MORE_THAN:    " + temp_token.image);
+         // case MORE_THAN:    System.out.println("MORE_THAN:    " + temp_token.image);
+         //  break;
+          case RETURN:    System.out.println("RETURN:    " + temp_token.image);
            break;
+           case AND:    System.out.println("AND:    " + temp_token.image);
+           break;
+        //  case OR:    System.out.println("OR:    " + temp_token.image);
+        //   break;
+
          default:
            if ( temp_token.kind != EOF )
              System.out.println("OTHER: " + temp_token.image);
@@ -119,6 +126,8 @@ SKIP: /* Whitespace */
 | "\n"
 | "\r"
 | " "
+| "//"
+|<SINGLE_LINE_COMMENT>
 }
 
 
@@ -130,7 +139,7 @@ TOKEN:
 |  <PLUS:    "+"> 
 | <MINUS: "-" >
 |  <MULTIPLY:   "*">
-| <DIVIDE:  "/" >
+//| <DIVIDE:  "/" >
 |  < INTEGER_LITERAL: (["0"-"9"])+ >
 |  <CLASS:"class">
 |  <IF: "if">
@@ -140,7 +149,7 @@ TOKEN:
 | <VOID: "void">
 | <MAIN: "main">
 | <THIS: "this">
-| <PERIOD: ".">
+| <DOT: ".">
 | <WHILE: "while">
 | <EXTENDS: "extends">
 | <BOOLEAN: "boolean">
@@ -153,12 +162,16 @@ TOKEN:
 | <NOT: "!">
 | <EQUALS: "=">
 | <COMMA: ",">
+| <RETURN: "return">
 | < IDENTIFIER: (["a"-"z", "A"-"Z"])+ (["a"-"z", "A"-"Z", "0"-"9", "_"])* >
 | <LBRACKET: "[">
 | <RBRACKET: "]">
 | <LCBRACKET: "{">
 | <RCBRACKET: "}">
 | <SEMICOLON: ";">
-| <LESS_THAN: ">">
-| <MORE_THAN: "<">
+//| <MORE_THAN: ">">
+| <LESS_THAN: "<">
+| <AND: "&&">
+//| <OR: "||">
+| <SINGLE_LINE_COMMENT: "//" (~["\n","\r"])* >
 }

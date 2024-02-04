@@ -1,0 +1,50 @@
+class test{
+    public static void main(String[] args) {
+        add b = new calculate();
+        int []j = new int[20];
+        boolean c;
+        int p;
+        int r;
+        r = 100;
+        p = 0;
+        if (j.length<20)
+            c = false;
+        else
+            c = true;
+        j[0] = b.compute(c,p,r); 
+        while (p<j.length-3)
+            p=p+1;  
+        j[1] = b.compute(c,p,r);  
+        System.out.println(j[0]);
+        System.out.println(j[1]);
+    }
+}
+// ignore this
+class add{
+    public int compute(boolean c, int i, int a){
+        int p;
+        int k;
+        p=0;
+        k = i;
+        if (c)
+            p = a * i;
+        else   
+            p = i;
+        if (i<0)
+            return a;
+        else 
+            return this.compute(!c,k-2,p);
+        
+        }
+    }
+
+class calculate extends add{
+    public int compute(boolean c, int i, int a){
+        if (c)
+            return i*a;
+        else 
+            return i*i;
+    }
+}
+
+
